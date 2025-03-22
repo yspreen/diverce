@@ -318,6 +318,7 @@ export default function ConvertProject() {
                       placeholder="Enter your KV namespace ID"
                       className="input-field"
                     />
+                      <a className="text-sm" href="https://dash.cloudflare.com/?to=/:account/workers/kv/namespaces" target="_blank">Create a new KV namespace here</a>
                   </div>
                 )}
                 
