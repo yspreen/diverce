@@ -464,7 +464,7 @@ export default function ConvertProject() {
                     <div className="mt-6 bg-success-lighter p-4 rounded-cloudflare border border-success-light">
                       <h3 className="font-semibold text-success-dark mb-2">Conversion Completed!</h3>
                       <p className="text-foreground-secondary mb-4">
-                        Your Next.js project has been successfully converted to use Cloudflare. You can now deploy it to Cloudflare Pages.
+                        Your Next.js project has been successfully converted to use Cloudflare. You can now deploy it to Cloudflare Workers.
                       </p>
                       <div className="flex space-x-4">
                         <Link href="/dashboard" className="btn-secondary">
