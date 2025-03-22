@@ -46,4 +46,7 @@ tmp/
 
 # Cache
 .eslintcache
-.stylelintcache 
+.stylelintcache
+
+# Server manifests with sensitive keys
+server/server-reference-manifest.json 

@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 44, 44, 49;
+  --background-rgb: 249, 247, 245;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@layer base {
+  a {
+    @apply text-primary hover:text-primary-dark transition-colors duration-200;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-sans tracking-tight;
+  }
+  
+  p {
+    @apply text-foreground-secondary;
+  }
+
+  pre {
+    @apply font-mono bg-accents-1 p-4 rounded-cloudflare text-sm overflow-auto;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center px-4 py-2 rounded-cloudflare font-medium text-sm transition-all duration-200 focus:outline-none;
+  }
+  
+  .btn-primary {
+    @apply btn bg-primary text-white hover:bg-primary-dark border border-transparent shadow-small hover:shadow-medium;
+  }
+  
+  .btn-secondary {
+    @apply btn bg-white text-foreground hover:bg-accents-1 border border-accents-2 shadow-small hover:shadow-medium;
+  }
+
+  .btn-success {
+    @apply btn bg-success text-white hover:bg-success-dark border border-transparent shadow-small hover:shadow-medium;
+  }
+
+  .btn-disabled {
+    @apply btn bg-accents-1 text-accents-3 border border-accents-2 cursor-not-allowed;
+  }
+  
+  .card {
+    @apply bg-white rounded-cloudflare shadow-small border border-accents-2 p-6 transition-shadow duration-200;
+  }
+
+  .input-field {
+    @apply w-full px-3 py-2 border border-accents-2 rounded-cloudflare focus:outline-none focus:ring-2 focus:ring-primary text-foreground bg-white transition-all duration-200;
+  }
+  
+  .select-field {
+    @apply w-full px-3 py-2 border border-accents-2 rounded-cloudflare focus:outline-none focus:ring-2 focus:ring-primary text-foreground bg-white transition-all duration-200;
+  }
+  
+  .checkbox {
+    @apply h-4 w-4 text-primary focus:ring-primary rounded border-accents-3;
+  }
+  
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  .badge-success {
+    @apply badge bg-success-lighter text-success-dark;
+  }
+  
+  .badge-warning {
+    @apply badge bg-warning-lighter text-warning-dark;
+  }
+  
+  .badge-error {
+    @apply badge bg-error-lighter text-error-dark;
+  }
+
+  .badge-primary {
+    @apply badge bg-primary-lighter text-primary-dark;
+  }
+
+  .badge-secondary {
+    @apply badge bg-secondary-lighter text-secondary-dark;
+  }
+} 
