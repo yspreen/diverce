@@ -467,6 +467,30 @@ export default function ConvertProject() {
                       <p className="text-foreground-secondary mb-4">
                         Your Next.js project has been successfully converted to use Cloudflare. You can now deploy it to Cloudflare Workers.
                       </p>
+                      {/* Add code snippet that clones the repository and runs npm run deploy */}
+                      <pre className="bg-accents-1 rounded-cloudflare p-4 text-sm whitespace-pre-wrap relative mb-6">
+                        <button 
+                          onClick={() => {
+                            const code = `git clone ${project.gitRepository.url}
+cd ${project.gitRepository.repo.split('/').pop()}
+npm install
+npm run deploy`;
+                            navigator.clipboard.writeText(code);
+                          }}
+                          className="absolute top-2 right-2 p-1 bg-accents-2 hover:bg-primary hover:text-white rounded-md text-xs transition-colors"
+                          title="Copy to clipboard"
+                        >
+                          <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
+                          </svg>
+                        </button>
+                        <code>
+                          git clone {project.gitRepository.url}<br/>
+                          cd {project.gitRepository.repo.split('/').pop()}<br/>
+                          npm install<br/>
+                          npm run deploy
+                        </code>
+                      </pre>
                       <div className="flex space-x-4">
                         <Link href="/dashboard" className="btn-secondary">
                           Back to Projects
