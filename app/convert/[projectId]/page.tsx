@@ -466,6 +466,15 @@ export default function ConvertProject() {
                       <p className="text-foreground-secondary mb-4">
                         Your Next.js project has been successfully converted to use Cloudflare. You can now deploy it to Cloudflare Pages.
                       </p>
+                      {/* Add code snippet that clones the repository and runs npm run deploy */}
+                      <pre className="bg-accents-1 rounded-cloudflare p-4 text-sm whitespace-pre-wrap">
+                        <code>
+                          git clone {project.gitRepository.url}<br/>
+                          cd {project.gitRepository.repo.split('/').pop()}<br/>
+                          npm install<br/>
+                          npm run deploy
+                        </code>
+                      </pre>
                       <div className="flex space-x-4">
                         <Link href="/dashboard" className="btn-secondary">
                           Back to Projects
