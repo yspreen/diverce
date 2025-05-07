@@ -37,12 +37,20 @@ Diverce helps you migrate your Next.js projects from Vercel to Cloudflare by:
    ```
    Then edit `.env.local` and add your Vercel API token, which you can create at https://vercel.com/account/tokens
 
-4. Start the development server:
+   Optional: If your projects live in a Team account, set an additional environment variable:
+
+   ```bash
+   VERCEL_TEAM_ID=your-team-name
+   ```
+
+   You can find the name of your team in the settings page of your team in the "Team URL" section
+
+5. Start the development server:
    ```bash
    npm run dev
    ```
 
-5. Visit http://localhost:3000 to use the app
+6. Visit http://localhost:3000 to use the app
 
 ## Usage
 
