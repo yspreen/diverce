@@ -1,8 +1,7 @@
+import { exec } from 'child_process';
 import fs from 'fs';
 import path from 'path';
-import { exec } from 'child_process';
 import { promisify } from 'util';
-import simpleGit from 'simple-git';
 
 const execAsync = promisify(exec);
 
@@ -178,8 +177,8 @@ ${this.options.enableKVCache ? '  incrementalCache: kvIncrementalCache,' : ''}
     const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf8'));
     
     packageJson.scripts = packageJson.scripts || {};
-    packageJson.scripts.preview = 'opennextjs-cloudflare && wrangler dev';
-    packageJson.scripts.deploy = 'opennextjs-cloudflare && wrangler deploy';
+    packageJson.scripts.preview = 'opennextjs-cloudflare build && wrangler dev';
+    packageJson.scripts.deploy = 'opennextjs-cloudflare build && wrangler deploy';
     packageJson.scripts['cf-typegen'] = 'wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts';
     
     fs.writeFileSync(packageJsonPath, JSON.stringify(packageJson, null, 2));
